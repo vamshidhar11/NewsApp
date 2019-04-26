@@ -1,0 +1,11 @@
+
+.nav-grid{
+    font-family: 'Montserrat', sans-serif;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 10px;
+    padding:1rem;
+    font-size: 1.2rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    border-radius:7px;
+}
