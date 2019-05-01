@@ -1,10 +1,24 @@
-<div class="row news-content">
+<div class="row news-content" *ngFor="let news of newsContent">
   <div class="col-8">
-      <div class="row"><h3>Myanmar’s Highest Court Upholds Conviction of Reuters Journalists - The New York Times</h3></div>
-      <div class="row"><h5>news &nbsp;</h5><p>by: BBC News</p></div>
-      <div class="row"><p>Image copyrightGetty/ERIC BARADATImage caption\r\n The US Supreme Court will examine federal protections for LGBT employees in the workplace\r\nThe US Supreme Court has agreed to hear three cases that ask if existing US job discrimination laws should extend to se… [+2674 chars]</p></div>
-      <div class="row"><p>readmore at &nbsp;<a href="http://www.bbc.co.uk/news/world-us-canada-48017275"> BBC</a></p></div>
+    <div class="row">
+      <h3>{{ news.title }}</h3>
+    </div>
+    <div class="row">
+      <h6>news by:&nbsp;{{ news.source.name }}</h6>
+    </div>
+    <div class="row">
+      <p>
+        {{ news.description }}
+      </p>
+    </div>
+    <div class="row">
+      <p>
+        readmore at &nbsp;<a href="{{ news.url }}"> {{ news.source.name }}</a>
+      </p>
+    </div>
   </div>
   <div class="col-1"></div>
-  <div class="col-3" style="padding: 0px !important;"><img class="news-image" src="https://static01.nyt.com/images/2019/04/23/world/23myanmar-1/23myanmar-1-facebookJumbo.jpg"/></div>
+  <div class="col-3" style="padding: 0px !important;">
+    <img class="news-image" src="{{ news.urlToImage }}" />
+  </div>
 </div>

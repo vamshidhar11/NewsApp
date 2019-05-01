@@ -15,7 +15,7 @@ const newsCenterRoutes: Routes = [
         component: NewsCenterNavComponent,
         children: [
           {
-            path: 'detail',
+            path: ':link',
             component: NewsDetailComponent
           }
         ]
@@ -27,4 +27,4 @@ const newsCenterRoutes: Routes = [
   imports: [RouterModule.forChild(newsCenterRoutes)],
   exports: [RouterModule]
 })
-export class NewsCenterRoutingModule { }
+export class NewsCenterRoutingModule {}

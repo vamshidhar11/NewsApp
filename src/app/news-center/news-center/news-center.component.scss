@@ -1,17 +1,17 @@
-.news{
-    &-header{
-      background-color: #d10000;
-      color:white;
-      text-transform: uppercase;
-      padding:0.6rem 0 0.6rem 1.2rem;
+.news {
+  &-header {
+    background-color: #d10000;
+    color: white;
+    text-transform: uppercase;
+    padding: 0.6rem 0 0.6rem 1.2rem;
+  }
+  &-layout {
+    margin-left: 15%;
+    margin-right: 15%;
+    background-color: white !important;
+    a {
+      color: cornflowerblue !important;
     }
-    &-layout{
-        margin-left:20%;
-        margin-right:20%;
-        background-color: white !important;
-        a{
-            color: cornflowerblue !important;    
-        }
-        // border: 1px solid grey;
-    }   
+    // border: 1px solid grey;
+  }
 }
