@@ -3,6 +3,7 @@
     <div *ngFor="let link of navBarLinks">
       <a
         class="nav-item nav-link active"
+        [class.selected]="link === selectedId"
         [routerLink]="[link]"
         routerLinkActive="router-link-active"
         (click)="newsDetail(link)"

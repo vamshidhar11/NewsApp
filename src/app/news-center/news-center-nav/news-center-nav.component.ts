@@ -34,5 +34,6 @@ export class NewsCenterNavComponent implements OnInit {
   }
   newsDetail(link) {
     this.newsService.NewsDetail(link);
+    this.selectedId = link;
   }
 }
