@@ -5,11 +5,18 @@
   margin-top: 20px;
   border-radius: 7px;
   background-color: white;
-  .news-image {
-    height: 100%;
-    width: 100%;
-    padding: 0px !important;
+  .image-container {
+    overflow: hidden;
+    img{
+      max-width: 100%;
+      height: auto;
+      // width: 100%;
+      padding: 0px !important;
+    }
   }
+  // .news-image {
+    
+  // }
   h3,
   h6,
   p {
