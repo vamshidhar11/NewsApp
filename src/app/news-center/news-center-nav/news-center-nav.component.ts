@@ -1,6 +1,6 @@
 import { NewsService } from './../news.service';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
 
 @Component({
@@ -12,7 +12,8 @@ export class NewsCenterNavComponent implements OnInit {
   selectedId: string;
   constructor(
     private route: ActivatedRoute,
-    private newsService: NewsService
+    private newsService: NewsService,
+    private router: Router,
   ) {}
   navBarLinks: Array<string> = new Array();
   ngOnInit() {
@@ -24,15 +25,12 @@ export class NewsCenterNavComponent implements OnInit {
       'business',
       'sports'
     ];
-
-    // this.route.paramMap.pipe(
-    //   switchMap(params => {
-    //     // (+) before `params.get()` turns the string into a number
-    //     this.selectedId = params.get('id');
-    //   })
-    // );
+    this.router.navigate(['/news-center', 'technology']);
+    setTimeout(() => {
+    this.newsDetail('technology');
+    }, 1);
   }
-  newsDetail(link) {
+  newsDetail(link: string) {
     this.newsService.NewsDetail(link);
     this.selectedId = link;
   }
