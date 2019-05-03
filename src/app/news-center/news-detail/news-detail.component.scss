@@ -7,7 +7,7 @@
   background-color: white;
   .image-container {
     overflow: hidden;
-    img{
+    img {
       max-width: 100%;
       height: auto;
       // width: 100%;
@@ -22,7 +22,7 @@
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
-.wrapper{
+.wrapper {
   display: grid;
   grid-gap: 5px;
   font-family: 'Montserrat', sans-serif;
@@ -34,56 +34,34 @@
 
   grid-gap: 2px;
   grid-template-rows: auto auto auto auto;
-  grid-template-areas: "image "
-                        "title"
-                        "source-name"
-                        "description"
-                        "readmore";
-  
-}
-@media only screen and (min-width: 1600px)   {
-  .wrapper {
-  grid-gap: 5px;
-  grid-template-columns: auto 3rem 25rem ;
-  grid-template-areas: "title . image"
-                        "source-name . image"
-                        "description . image"
-                        "readmore . image";
-  }
-}
+  grid-template-areas:
+    'image '
+    'title'
+    'source-name'
+    'description'
+    'readmore';
 
-@media only screen and (min-width: 1400) and (max-width: 1600px)   {
-  .wrapper {
-grid-gap: 2px;
-grid-template-columns: auto 2rem 20rem ;
-grid-template-areas: "title . image"
-                      "source-name . image"
-                      "description . image"
-                      "readmore . image";
+  h3 {
+    font-size: 2.8rem;
+  }
+  h6 {
+    font-size: 1.6rem;
+  }
+  .description > p,
+  .readmore > p {
+    font-size: 1.8rem;
   }
 }
-@media only screen and (min-width: 1140px) and (max-width: 1400px)   {
-  .wrapper {
-grid-gap: 2px;
-grid-template-columns: auto 2rem 18rem ;
-grid-template-areas: "title . image"
-                      "source-name . image"
-                      "description . image"
-                      "readmore . image";
-  }
-}
-
-.box{
+.box {
   background-color: #fff;
   color: black;
   border-radius: 5px;
 }
 .image-container {
   overflow: hidden;
-  img{
+  img {
     max-width: 100%;
     height: auto;
-    // width: 100%;
     padding: 0px !important;
   }
 }
@@ -92,22 +70,55 @@ h6,
 p {
   padding: 10px 0px 0px 10px;
 }
-p{
-  font-size: 1.2em;
-}
-.title{
+
+.title {
   grid-area: title;
   height: auto;
 }
-.source-name{
+.source-name {
   grid-area: source-name;
 }
-.description{
+.description {
   grid-area: description;
 }
-.readmore{
+.readmore {
   grid-area: readmore;
 }
-.image{
+.image {
   grid-area: image;
+}
+
+@media only screen and (min-width: 1600px) {
+  .wrapper {
+    grid-gap: 5px;
+    grid-template-columns: auto 3rem, 36rem;
+    grid-template-areas:
+      'title . image'
+      'source-name . image'
+      'description . image'
+      'readmore . image';
+  }
+}
+
+@media only screen and (min-width: 1400) and (max-width: 1600px) {
+  .wrapper {
+    grid-gap: 2px;
+    grid-template-columns: auto 2rem 35rem;
+    grid-template-areas:
+      'title . image'
+      'source-name . image'
+      'description . image'
+      'readmore . image';
+  }
+}
+@media only screen and (min-width: 1140px) and (max-width: 1400px) {
+  .wrapper {
+    grid-gap: 2px;
+    grid-template-columns: auto 2rem 30rem;
+    grid-template-areas:
+      'title . image'
+      'source-name . image'
+      'description . image'
+      'readmore . image';
+  }
 }

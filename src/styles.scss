@@ -1,6 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~bootstrap/dist/css/bootstrap.css";
-@import "~font-awesome/css/font-awesome.css";
-html{
-    font-size: 16px;
+@import '~bootstrap/dist/css/bootstrap.css';
+@import '~font-awesome/css/font-awesome.css';
+@import 'assets/mixins';
+
+html {
+  font-size: 62.5%;
+}
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+  html {
+    font-size: 37.5%;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 900px) {
+  html {
+    font-size: 56.25%;
+  }
 }
