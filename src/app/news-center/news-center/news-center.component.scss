@@ -17,8 +17,13 @@
 }
 
 @media only screen and (min-width: 320px) and (max-width: 600px) {
-  .news-layout {
-    margin-left: 0;
-    margin-right: 0;
+  .news {
+    &-header {
+      padding: 1rem;
+    }
+    &-layout {
+      margin-left: 0;
+      margin-right: 0;
+    }
   }
 }
