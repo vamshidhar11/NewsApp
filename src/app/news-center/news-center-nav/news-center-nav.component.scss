@@ -16,3 +16,13 @@
     color: white;
   }
 }
+@media only screen and (min-width: 930px) and (max-width: 1140px)   {
+  .nav-grid  {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 930px)   {
+  .nav-grid  {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
