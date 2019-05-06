@@ -16,10 +16,10 @@
   }
 }
 
-@media only screen and (min-width: 320px) and (max-width: 600px) {
+@media only screen and (min-width: 100px) and (max-width: 600px) {
   .news {
     &-header {
-      padding: 1rem;
+      padding: 2rem;
     }
     &-layout {
       margin-left: 0;
