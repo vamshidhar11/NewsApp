@@ -27,7 +27,7 @@
 @media only screen and (min-width: 100px) and (max-width: 600px) {
   .news {
     &-header {
-      padding: 2rem;
+      padding: 2rem 0 2rem 1.5rem;
     }
     &-layout {
       margin-left: 0;
@@ -35,10 +35,3 @@
     }
   }
 }
-// @media only screen and (min-width: 1200px) and (max-width: 1400px) {
-//   .news {
-//     &-footer {
-//       padding: 2% 0px 2% 0px;
-//     }
-//   }
-// }
