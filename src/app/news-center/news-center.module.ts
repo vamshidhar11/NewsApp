@@ -6,9 +6,10 @@ import { NewsCenterComponent } from './news-center/news-center.component';
 import { NewsCenterNavComponent } from './news-center-nav/news-center-nav.component';
 import { NewsDetailComponent } from './news-detail/news-detail.component';
 import { NewsHeaderComponent } from './news-header/news-header.component';
+import { NewsFooterComponent } from './news-footer/news-footer.component';
 
 @NgModule({
-  declarations: [NewsCenterComponent, NewsCenterNavComponent, NewsDetailComponent, NewsHeaderComponent],
+  declarations: [NewsCenterComponent, NewsCenterNavComponent, NewsDetailComponent, NewsHeaderComponent, NewsFooterComponent],
   imports: [
     CommonModule,
     NewsCenterRoutingModule
