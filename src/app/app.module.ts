@@ -7,16 +7,9 @@ import { NewsCenterModule } from './news-center/news-center.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    PageNotFoundComponent
-  ],
-  imports: [
-    BrowserModule,
-    NewsCenterModule,
-    AppRoutingModule,
-  ],
+  declarations: [AppComponent, PageNotFoundComponent],
+  imports: [BrowserModule, NewsCenterModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

@@ -13,7 +13,7 @@ export class NewsCenterNavComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private newsService: NewsService,
-    private router: Router,
+    private router: Router
   ) {}
   navBarLinks: Array<string> = new Array();
   ngOnInit() {
@@ -27,7 +27,7 @@ export class NewsCenterNavComponent implements OnInit {
     ];
     this.router.navigate(['/news-center', 'technology']);
     setTimeout(() => {
-    this.newsDetail('technology');
+      this.newsDetail('technology');
     }, 1);
   }
   newsDetail(link: string) {

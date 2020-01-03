@@ -22,20 +22,25 @@
     <img class="news-image" src="{{ news.urlToImage }}" />
   </div>
 </div> -->
-
-
+<ngx-spinner> </ngx-spinner>
 <div class="wrapper" *ngFor="let news of newsContent">
-  <div class="box title"><h3>{{ news.title }}</h3></div>
-  <div class="box source-name"><h6>news by:&nbsp;{{ news.source.name }}</h6></div>
-  <div class="box description"><p>
-    {{ news.description }}
-  </p> </div>
-  <div class="box readmore">
+  <div class="box title">
+    <h3>{{ news.title }}</h3>
+  </div>
+  <div class="box source-name">
+    <h6>news by:&nbsp;{{ news.source.name }}</h6>
+  </div>
+  <div class="box description">
     <p>
-    readmore at &nbsp;<a href="{{ news.url }}"> {{ news.source.name }}</a>
+      {{ news.description }}
     </p>
   </div>
-  <div class="box image image-container"><img class="news-image" src="{{ news.urlToImage }}" /></div>
+  <div class="box readmore">
+    <p>
+      readmore at &nbsp;<a href="{{ news.url }}"> {{ news.source.name }}</a>
+    </p>
+  </div>
+  <div class="box image image-container">
+    <img class="news-image" src="{{ news.urlToImage }}" />
+  </div>
 </div>
-
-
