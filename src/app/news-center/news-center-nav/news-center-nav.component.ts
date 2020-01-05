@@ -25,13 +25,14 @@ export class NewsCenterNavComponent implements OnInit {
       'business',
       'sports'
     ];
-    this.router.navigate(['/news-center', 'technology']);
-    setTimeout(() => {
-      this.newsDetail('technology');
-    }, 1);
+
+    this.newsDetail('technology');
   }
   newsDetail(link: string) {
-    this.newsService.NewsDetail(link);
+    this.newsService.get(link).subscribe(data => {
+      console.log(data);
+      this.newsService.setNews(data);
+    });
     this.selectedId = link;
   }
 }

@@ -1,5 +1,5 @@
 import { NewsService } from './../news.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
 import { NgxSpinnerService } from 'ngx-spinner';
@@ -10,37 +10,8 @@ import { NgxSpinnerService } from 'ngx-spinner';
   styleUrls: ['./news-detail.component.scss']
 })
 export class NewsDetailComponent implements OnInit {
-  newsContent: any;
-  selectedId: any;
-  newslink: any;
-  constructor(
-    private route: ActivatedRoute,
-    private router: Router,
-    private newsService: NewsService,
-    private spinner: NgxSpinnerService
-  ) {}
+  @Input() news: any;
+  constructor() {}
 
-  ngOnInit() {
-    this.newsService.getNews.subscribe(arg => {
-      this.newslink = arg;
-      this.fetchNews();
-    });
-  }
-  fetchNews() {
-    const url =
-      'https://newsapi.org/v2/top-headlines?' +
-      'country=us&' +
-      `category=${this.newslink}&` +
-      'apiKey=f211558e50c148689cb2bda17f750e62';
-
-    const req = new Request(url);
-
-    fetch(req).then(response => {
-      response.json().then(data => {
-        console.log(data);
-        this.newsContent = data.articles;
-        this.spinner.hide();
-      });
-    });
-  }
+  ngOnInit() {}
 }

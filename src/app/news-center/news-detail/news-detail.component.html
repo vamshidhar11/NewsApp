@@ -1,29 +1,4 @@
-<!-- <div class="row news-content" *ngFor="let news of newsContent">
-  <div class="col-8">
-    <div class="row">
-      <h3>{{ news.title }}</h3>
-    </div>
-    <div class="row">
-      <h6>news by:&nbsp;{{ news.source.name }}</h6>
-    </div>
-    <div class="row">
-      <p>
-        {{ news.description }}
-      </p>
-    </div>
-    <div class="row">
-      <p>
-        readmore at &nbsp;<a href="{{ news.url }}"> {{ news.source.name }}</a>
-      </p>
-    </div>
-  </div>
-  <div class="col-1"></div>
-  <div class="col-3 image-container" style="padding: 0px !important;">
-    <img class="news-image" src="{{ news.urlToImage }}" />
-  </div>
-</div> -->
-<ngx-spinner> </ngx-spinner>
-<div class="wrapper" *ngFor="let news of newsContent">
+<div class="wrapper">
   <div class="box title">
     <h3>{{ news.title }}</h3>
   </div>

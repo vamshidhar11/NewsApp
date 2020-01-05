@@ -6,9 +6,16 @@ import { AppComponent } from './app.component';
 import { NewsCenterModule } from './news-center/news-center.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [AppComponent, PageNotFoundComponent],
-  imports: [BrowserModule, NewsCenterModule, AppRoutingModule],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    NewsCenterModule,
+    AppRoutingModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

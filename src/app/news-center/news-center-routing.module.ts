@@ -8,19 +8,23 @@ import { NewsDetailComponent } from './news-detail/news-detail.component';
 const newsCenterRoutes: Routes = [
   {
     path: 'news-center',
-    component: NewsCenterComponent,
-    children: [
-      {
-        path: '',
-        component: NewsCenterNavComponent,
-        children: [
-          {
-            path: ':link',
-            component: NewsDetailComponent
-          }
-        ]
-      }
-    ]
+    component: NewsCenterComponent
+    // children: [
+    //   {
+    //     path: '',
+    //     component: NewsCenterNavComponent,
+    //     children: [
+    //       {
+    //         path: 'technology',
+    //         component: NewsDetailComponent
+    //       },
+    //       {
+    //         path: ':link',
+    //         component: NewsDetailComponent
+    //       }
+    //     ]
+    //   }
+    // ]
   }
 ];
 @NgModule({
