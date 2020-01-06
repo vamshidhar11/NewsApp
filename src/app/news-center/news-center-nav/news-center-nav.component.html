@@ -1,13 +1,13 @@
-<nav>
-  <div class="nav-grid">
-    <div *ngFor="let link of navBarLinks">
+<nav class="nav">
+  <span class="nav-span-overlay"></span>
+  <ul class="nav-grid">
+    <li *ngFor="let link of navBarLinks">
       <a
         class="nav-item nav-link active"
         [class.selected]="link === selectedId"
         (click)="newsDetail(link)"
         >{{ link }}</a
       >
-    </div>
-  </div>
+    </li>
+  </ul>
 </nav>
-<router-outlet></router-outlet>

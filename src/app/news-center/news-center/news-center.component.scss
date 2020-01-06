@@ -1,10 +1,11 @@
 .news {
-  background-color: white !important;
+  background-color: #100e16 !important;
+  min-height: 100vh;
   a {
     color: cornflowerblue !important;
   }
   &-header {
-    background-color: #230c33;
+    background-color: #001628;
     color: white;
     text-transform: uppercase;
     padding: 1% 0 1% 15%;
@@ -17,7 +18,7 @@
     // border: 1px solid grey;
   }
   &-footer {
-    background-color: #d10000;
+    background-color: #001628;
     margin-top: 4vh;
     height: auto;
     color: white;
