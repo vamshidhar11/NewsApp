@@ -17,6 +17,10 @@
 
     // border: 1px solid grey;
   }
+  &-nav {
+    position: sticky;
+    top: 0;
+  }
   &-footer {
     background-color: #001628;
     margin-top: 4vh;

@@ -10,6 +10,7 @@ import { switchMap } from 'rxjs/operators';
 })
 export class NewsCenterNavComponent implements OnInit {
   selectedId: string;
+  scrollPos: any;
   constructor(
     private route: ActivatedRoute,
     private newsService: NewsService,
@@ -28,11 +29,18 @@ export class NewsCenterNavComponent implements OnInit {
 
     this.newsDetail('technology');
   }
+
   newsDetail(link: string) {
     this.newsService.get(link).subscribe(data => {
       console.log(data);
       this.newsService.setNews(data);
     });
     this.selectedId = link;
+
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
   }
 }

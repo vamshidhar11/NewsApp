@@ -17,6 +17,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     NewsHeaderComponent,
     NewsFooterComponent
   ],
-  imports: [CommonModule, NewsCenterRoutingModule, NgxSpinnerModule]
+  imports: [CommonModule, NewsCenterRoutingModule, NgxSpinnerModule],
+  exports: [NewsCenterComponent]
 })
 export class NewsCenterModule {}
