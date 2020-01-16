@@ -36,11 +36,5 @@ export class NewsCenterNavComponent implements OnInit {
       this.newsService.setNews(data);
     });
     this.selectedId = link;
-
-    window.scroll({
-      top: 0,
-      left: 0,
-      behavior: 'smooth'
-    });
   }
 }
