@@ -17,7 +17,7 @@ export class NewsService {
   private newsContent$ = new BehaviorSubject<any>({});
   private loading$ = new BehaviorSubject<any>(true);
 
-  public get(newslink: string = 'technology'): Observable<any> {
+  public get(newslink: string = 'technology') {
     this.setLoading$(true);
     this.spinner.show();
     const url =
@@ -26,8 +26,12 @@ export class NewsService {
       `category=${newslink}&` +
       'apiKey=f211558e50c148689cb2bda17f750e62';
 
-    return this.httpClient.get(url).pipe(
-      tap(response => this.spinner.hide(), (error: any) => this.spinner.hide()))
+    return this.httpClient
+      .get(url)
+      .pipe()
+      .subscribe(response => {
+        this.newsContent$.next(response);
+      });
   }
   setLoading$(boolean) {
     this.loading$.next(boolean);

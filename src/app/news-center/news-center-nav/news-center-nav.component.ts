@@ -31,10 +31,7 @@ export class NewsCenterNavComponent implements OnInit {
   }
 
   newsDetail(link: string) {
-    this.newsService.get(link).subscribe(data => {
-      console.log(data);
-      this.newsService.setNews(data);
-    });
+    this.newsService.get(link);
     this.selectedId = link;
   }
 }
