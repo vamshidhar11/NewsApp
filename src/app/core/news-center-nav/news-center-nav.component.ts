@@ -9,7 +9,7 @@ import { switchMap } from 'rxjs/operators';
   styleUrls: ['./news-center-nav.component.scss']
 })
 export class NewsCenterNavComponent implements OnInit {
-  selectedId: string;
+  selectedId: any;
   scrollPos: any;
   constructor(
     private route: ActivatedRoute,
@@ -27,11 +27,14 @@ export class NewsCenterNavComponent implements OnInit {
       'sports'
     ];
 
-    // this.newsDetail('general');
+    this.newsDetail('general');
+    this.newsService.getTopic().subscribe(data => {
+      this.selectedId = data;
+      console.log(data);
+    });
   }
 
   newsDetail(link: string) {
     this.newsService.get(link);
-    this.selectedId = link;
   }
 }

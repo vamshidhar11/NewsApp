@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { NewsService } from '../../news-center/news.service';
 
 @Component({
   selector: 'app-news-header',
@@ -6,11 +7,15 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./news-header.component.scss']
 })
 export class NewsHeaderComponent implements OnInit {
-  constructor() {}
+  constructor(private newsService: NewsService) {}
 
   @Output() toggle: EventEmitter<any> = new EventEmitter();
   ngOnInit() {}
   _toggleOpened() {
     this.toggle.emit();
+  }
+
+  onClick() {
+    this.newsService.get('general');
   }
 }

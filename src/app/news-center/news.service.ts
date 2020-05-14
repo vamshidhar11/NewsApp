@@ -15,9 +15,11 @@ export class NewsService {
   ) {}
   @Output() newslink = new EventEmitter();
   private newsContent$ = new BehaviorSubject<any>({});
+  private topic$ = new BehaviorSubject<any>({});
   private loading$ = new BehaviorSubject<any>(true);
 
   public get(newslink: string = 'technology') {
+    this.topic$.next(newslink);
     this.setLoading$(true);
     this.spinner.show();
     const url =
@@ -44,5 +46,8 @@ export class NewsService {
   }
   setNews(news: string) {
     this.newsContent$.next(news);
+  }
+  getTopic(){
+    return this.topic$.asObservable();
   }
 }
