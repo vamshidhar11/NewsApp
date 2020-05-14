@@ -1,4 +1,4 @@
-import { NewsService } from './../news.service';
+import { NewsService } from '../../news-center/news.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
@@ -27,7 +27,7 @@ export class NewsCenterNavComponent implements OnInit {
       'sports'
     ];
 
-    this.newsDetail('technology');
+    // this.newsDetail('general');
   }
 
   newsDetail(link: string) {

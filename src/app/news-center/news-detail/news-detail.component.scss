@@ -88,7 +88,7 @@ p {
   grid-area: image;
 }
 
-@media only screen and (min-width: 900px) and (max-width: 1600px) {
+@media only screen and (min-width: 900px){
   .wrapper {
     grid-gap: 2px;
     grid-template-columns: auto 2rem 30rem;

@@ -1,0 +1,31 @@
+<header class="logo nav">
+  <div class="nav-logo">
+    <h1>News Center.</h1>
+  </div>
+
+  <ion-button fill="clear" color="light" class="nav-icon-chevron">
+    <ion-icon
+      style="margin-left: 1rem;"
+      slot="end"
+      name="chevron-down-outline"
+    ></ion-icon>
+    Topics
+  </ion-button>
+  <ion-searchbar class="nav-search" showCancelButton="always"></ion-searchbar>
+
+  <ion-button class="button-login" fill="clear" expand="full" color="light"
+    >log in</ion-button
+  >
+  <ion-button class="button-signup" fill="clear" color="light"
+    >sign up
+  </ion-button>
+  <ion-icon
+    class="nav-icon-grid"
+    size="large"
+    (click)="_toggleOpened()"
+    name="menu-outline"
+  ></ion-icon>
+</header>
+<div class="nav-topics">
+  <app-news-center-nav></app-news-center-nav>
+</div>

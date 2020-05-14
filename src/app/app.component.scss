@@ -1,35 +1,85 @@
-*,
-*::before,
-*::after {
-  margin: 0 ;
-  padding: 0 ;
-  box-sizing: inherit;
+@import url('https://fonts.googleapis.com/css?family=Courgette|Montserrat|Satisfy&display=swap');
+
+:root {
+  --font-body: 'Montserrat', sans-serif;
+  --font-heading: $font-body;
+  --font-comment: 'Courgette', cursive;
+  --font-reply: 'Satisfy', cursive;
+
+  --color-black: #000;
+  --color-dark: #100e16;
+  --color-dark-blue: #001628;
+  --color-dark-grey: #15202b;
+  --color-light-green: #17bf63;
 }
 
-// html {
-//     // This defines what 1rem is
-//     // font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
-    
-    
-//     // @include respond(tab-land) {
-//     //   // width < 1200?
-//     //   font-size: 36.25%; //1 rem = 9px, 9/16 = 50%
-//     // }
-  
-//     // @include respond(tab-port) {
-//     //   // width < 900?
-//     //   font-size: 30%; //1 rem = 8px, 8/16 = 50%
-//     // }
-  
-//     // @include respond(big-desktop) {
-//     //   font-size: 65%; //1rem = 12, 12/16
-//     // }
-//   }
-//   app-root{
-//     font-family: 'Montserrat', sans-serif;
-//   }
-//   body {
-//     box-sizing: border-box;
-    
-//   }
-  
+::selection {
+  background-color: #0273d4;
+  color: #fff;
+}
+
+a {
+  color: #0273d4;
+  text-decoration: none;
+}
+a:hover {
+  border-bottom: 1px dotted #0273d4;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+h1,
+h2 {
+  font-weight: 300;
+}
+
+h1 {
+  border-bottom: 1px dotted #0273d4;
+  display: block;
+  margin: 2rem 0 1rem;
+  padding-bottom: 0.5rem;
+}
+
+h2 {
+  margin: 0.5rem 0;
+}
+
+.loading {
+  padding: 1em;
+}
+
+::ng-deep aside {
+  background-color: #001628;
+  padding: 2em 1em;
+  width: 70%;
+  opacity: 0.9;
+  @media only screen and (min-width: 1140px) {
+    width: 22%;
+  }
+}
+
+.demo-sidebar.ng-sidebar--opened.ng-sidebar--over {
+  box-shadow: 0 0 2.5em rgba(85, 85, 85, 0.5);
+}
+
+.demo-contents {
+  margin: 2rem 10rem;
+  @media only screen and (min-width: 100px) and (max-width: 1250px) {
+    margin: 2rem;
+  }
+}
+
+.demo-control {
+  background-color: white;
+  border: 1px solid #545555;
+  cursor: pointer;
+  margin-bottom: 0.5em;
+  padding: 0.5em 2em;
+  transition: background-color 0.15s;
+}
+.demo-control:hover {
+  background-color: #545555;
+  color: #fff;
+}

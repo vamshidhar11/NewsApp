@@ -1,18 +1,12 @@
 <div class="news">
-  <div class="news-header">
-    <app-news-header></app-news-header>
-  </div>
-  <div class="news-layout news-nav">
+  <!-- <div class="news-layout news-nav">
     <app-news-center-nav></app-news-center-nav>
-  </div>
+  </div> -->
 
   <div class="news-layout">
     <app-news-detail
       *ngFor="let item of newsContent"
       [news]="item"
     ></app-news-detail>
-  </div>
-  <div class="news-footer">
-    <app-news-footer></app-news-footer>
   </div>
 </div>

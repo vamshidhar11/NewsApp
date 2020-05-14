@@ -4,41 +4,15 @@
   a {
     color: cornflowerblue !important;
   }
-  &-header {
-    background-color: #001628;
-    color: white;
-    text-transform: uppercase;
-    padding: 1% 0 1% 15%;
-  }
 
   &-layout {
-    margin-left: 15%;
-    margin-right: 15%;
-
-    // border: 1px solid grey;
+    @media only screen and (min-width: 1024px) {
+      margin-left: 10rem;
+      margin-right: 10rem;
+    }
   }
   &-nav {
     position: sticky;
     top: 0;
-  }
-  &-footer {
-    background-color: #001628;
-    margin-top: 4vh;
-    height: auto;
-    color: white;
-    text-transform: uppercase;
-    padding: 2% 15% 2% 15%;
-  }
-}
-
-@media only screen and (min-width: 100px) and (max-width: 600px) {
-  .news {
-    &-header {
-      padding: 2rem 0 2rem 1.5rem;
-    }
-    &-layout {
-      margin-left: 0;
-      margin-right: 0;
-    }
   }
 }

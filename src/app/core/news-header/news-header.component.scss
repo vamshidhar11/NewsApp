@@ -1,0 +1,86 @@
+h1 {
+  font-size: 3.5rem;
+  margin: 0;
+}
+
+.nav {
+  align-items: center;
+  background: #001628;
+  color: #fff;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-areas: 'logo logo logo logo . menu ';
+
+  @media only screen and (min-width: 1248px) {
+    grid-template-columns: repeat(16, 1fr);
+
+    grid-template-areas: 'logo logo logo logo chevron . . . . search search search search login signup menu';
+  }
+  padding: 1% 2% 1% 2%;
+  width: 100%;
+  text-transform: uppercase;
+
+  @media only screen and (min-width: 100px) and (max-width: 800px) {
+    padding: 2rem 2rem 2rem 1.5rem;
+  }
+  &-logo {
+    grid-area: logo;
+  }
+  &-icon-chevron {
+    grid-area: chevron;
+    display: none;
+    @media only screen and (min-width: 1248px) {
+      display: block;
+    }
+  }
+  &-search {
+    grid-area: search;
+    display: none;
+    @media only screen and (min-width: 1248px) {
+      display: block;
+    }
+  }
+  .button-login {
+    grid-area: login;
+    display: none;
+    @media only screen and (min-width: 1248px) {
+      display: block;
+    }
+  }
+  .button-signup {
+    grid-area: signup;
+    display: none;
+    @media only screen and (min-width: 1248px) {
+      display: block;
+    }
+  }
+  &-icon-grid {
+    grid-area: menu;
+  }
+}
+
+.nav-topics {
+  margin-right: 0;
+  margin-left: 0;
+
+  @media only screen and (min-width: 1024px) {
+    margin-left: 20rem;
+    margin-right: 20rem;
+  }
+}
+
+ion-button {
+  font-size: 1.4rem;
+  --background-hover: #fff;
+  --color-hover: #001628;
+}
+
+ion-searchbar {
+  --background: #001628;
+  --border-radius: 5rem;
+  --color: #fff;
+}
+.nav-icon-grid {
+  font-size: 3.2rem;
+  margin: 0 auto;
+}
