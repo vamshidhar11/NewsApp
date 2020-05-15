@@ -1,5 +1,5 @@
 h1 {
-  font-size: 3.5rem;
+  font-size: 3.6rem;
   margin: 0;
 }
 
@@ -14,9 +14,9 @@ h1 {
   @media only screen and (min-width: 1248px) {
     grid-template-columns: repeat(16, 1fr);
 
-    grid-template-areas: 'logo logo logo logo chevron . . . . search search search search login signup menu';
+    grid-template-areas: 'newspaper logo logo logo logo  . . . . search search search search chevron login menu';
   }
-  padding: 1% 2% 1% 2%;
+  padding: 1%;
   width: 100%;
   text-transform: uppercase;
 
@@ -24,6 +24,9 @@ h1 {
     padding: 2rem 2rem 2rem 1.5rem;
   }
   &-logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     grid-area: logo;
   }
   &-icon-chevron {
@@ -47,15 +50,16 @@ h1 {
       display: block;
     }
   }
-  .button-signup {
-    grid-area: signup;
+
+  &-icon-grid {
+    grid-area: menu;
+  }
+  &-icon-newspaper {
+    grid-area: newspaper;
     display: none;
     @media only screen and (min-width: 1248px) {
       display: block;
     }
-  }
-  &-icon-grid {
-    grid-area: menu;
   }
 }
 
@@ -80,7 +84,8 @@ ion-searchbar {
   --border-radius: 5rem;
   --color: #fff;
 }
-.nav-icon-grid {
-  font-size: 3.2rem;
+.nav-icon-grid,
+.nav-icon-newspaper {
+  // font-size: 3.2rem;
   margin: 0 auto;
 }
