@@ -13,43 +13,6 @@
   --color-light-green: #17bf63;
 }
 
-::selection {
-  background-color: #0273d4;
-  color: #fff;
-}
-
-// a {
-//   color: #0273d4;
-//   text-decoration: none;
-// }
-// a:hover {
-//   border-bottom: 1px dotted #0273d4;
-// }
-
-// p {
-//   margin-bottom: 1rem;
-// }
-
-// h1,
-// h2 {
-//   font-weight: 300;
-// }
-
-// h1 {
-//   border-bottom: 1px dotted #0273d4;
-//   display: block;
-//   margin: 2rem 0 1rem;
-//   padding-bottom: 0.5rem;
-// }
-
-// h2 {
-//   margin: 0.5rem 0;
-// }
-
-// .loading {
-//   padding: 1em;
-// }
-
 ::ng-deep aside {
   background-color: #001628;
   padding: 2em 1em;
@@ -60,25 +23,12 @@
   }
 }
 
-.demo-sidebar.ng-sidebar--opened.ng-sidebar--over {
-  box-shadow: 0 0 2.5em rgba(85, 85, 85, 0.5);
-}
-
 .demo-contents {
   @media only screen and (min-width: 1024px) {
     margin: 2rem;
   }
 }
 
-.demo-control {
-  background-color: white;
-  border: 1px solid #545555;
-  cursor: pointer;
-  margin-bottom: 0.5em;
-  padding: 0.5em 2em;
-  transition: background-color 0.15s;
-}
-.demo-control:hover {
-  background-color: #545555;
-  color: #fff;
+main {
+  position: relative;
 }

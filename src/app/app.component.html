@@ -26,8 +26,9 @@
 
   <div ng-sidebar-content>
     <app-news-header (toggle)="_toggleOpened()"></app-news-header>
-    <section class="demo-contents">
-      <router-outlet></router-outlet>
-    </section>
+    <main class="demo-contents">
+      <router-outlet #o="outlet"></router-outlet>
+    </main>
+    <app-news-footer></app-news-footer>
   </div>
 </ng-sidebar-container>

@@ -1,5 +1,7 @@
 import { CoreModule } from './core/core.module';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -15,6 +17,7 @@ import { IonicModule } from '@ionic/angular';
   declarations: [AppComponent, PageNotFoundComponent],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     NewsCenterModule,
     AppRoutingModule,

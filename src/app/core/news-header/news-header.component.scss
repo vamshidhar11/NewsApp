@@ -14,7 +14,7 @@ h1 {
   @media only screen and (min-width: 1248px) {
     grid-template-columns: repeat(16, 1fr);
 
-    grid-template-areas: 'newspaper logo logo logo logo  . . . . search search search search chevron login menu';
+    grid-template-areas: 'logo logo logo logo  . . . . . search search search search chevron login menu';
   }
   padding: 1%;
   width: 100%;
@@ -54,13 +54,13 @@ h1 {
   &-icon-grid {
     grid-area: menu;
   }
-  &-icon-newspaper {
-    grid-area: newspaper;
-    display: none;
-    @media only screen and (min-width: 1248px) {
-      display: block;
-    }
-  }
+  // &-icon-newspaper {
+  //   grid-area: newspaper;
+  //   display: none;
+  //   @media only screen and (min-width: 1248px) {
+  //     display: block;
+  //   }
+  // }
 }
 
 .nav-topics {
