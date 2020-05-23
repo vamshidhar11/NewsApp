@@ -84,7 +84,7 @@
           </ion-avatar>
         </ion-col>
         <ion-col size="12">
-          <ion-item>
+          <ion-item lines="none">
             <h3>{{ user.displayName }}</h3>
           </ion-item></ion-col
         >
@@ -97,7 +97,7 @@
         <ion-col size="12" class="ion-margin-bottom">
           <ion-item button detail lines="none"> <h5>About</h5> </ion-item>
         </ion-col>
-        <ion-col size="12" class="ion-margin-bottom">
+        <ion-col size="12" lines="none" class="ion-margin-bottom">
           <ion-item button (click)="auth.signOut()"> <h5>Logout</h5> </ion-item>
         </ion-col>
       </ion-row>
