@@ -29,17 +29,29 @@
       <ion-grid>
         <ion-row>
           <ion-col size="12">
-            <ion-item button detail lines="full"> <h5>Home</h5> </ion-item>
+            <ion-item button detail lines="none"> <h5>Home</h5> </ion-item>
           </ion-col>
           <ion-col size="12">
-            <ion-item button detail lines="full"> <h5>Sources</h5> </ion-item>
+            <ion-item button detail lines="none"> <h5>Sources</h5> </ion-item>
           </ion-col>
           <ion-col size="12" class="ion-margin-bottom">
-            <ion-item button detail lines="full"> <h5>About</h5> </ion-item>
+            <ion-item button detail lines="none"> <h5>About</h5> </ion-item>
           </ion-col>
 
           <ion-col size="12">
-            <ion-button
+            <ion-item
+              lines="none"
+              (click)="auth.googleSignin()"
+              button
+              color="success"
+              class="sigin-google"
+            >
+              <ion-icon name="logo-google" slot="start"></ion-icon>
+              <h5 class="ion-no-margin ion-padding-horizontal">
+                Google Sign-in
+              </h5>
+            </ion-item>
+            <!-- <ion-button
               class="ion-margin-start"
               fill="solid"
               color="success"
@@ -52,7 +64,7 @@
               >
                 <h5 class="ion-no-margin">Google sign-in</h5>
               </ion-text>
-            </ion-button>
+            </ion-button> -->
           </ion-col>
         </ion-row>
       </ion-grid>
@@ -77,13 +89,13 @@
           </ion-item></ion-col
         >
         <ion-col size="12">
-          <ion-item button detail lines="full"> <h5>Home</h5> </ion-item>
+          <ion-item button detail lines="none"> <h5>Home</h5> </ion-item>
         </ion-col>
         <ion-col size="12">
-          <ion-item button detail lines="full"> <h5>Sources</h5> </ion-item>
+          <ion-item button detail lines="none"> <h5>Sources</h5> </ion-item>
         </ion-col>
         <ion-col size="12" class="ion-margin-bottom">
-          <ion-item button detail lines="full"> <h5>About</h5> </ion-item>
+          <ion-item button detail lines="none"> <h5>About</h5> </ion-item>
         </ion-col>
         <ion-col size="12" class="ion-margin-bottom">
           <ion-item button (click)="auth.signOut()"> <h5>Logout</h5> </ion-item>
