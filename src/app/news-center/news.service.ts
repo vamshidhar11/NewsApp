@@ -1,18 +1,15 @@
+import { environment } from './../../environments/environment';
 import { Injectable, Output, EventEmitter } from '@angular/core';
-import { NgxSpinnerService } from 'ngx-spinner';
 // import { EventEmitter } from 'events';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { tap } from 'rxjs/operators';
+import { tap, map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class NewsService {
-  constructor(
-    private spinner: NgxSpinnerService,
-    private httpClient: HttpClient
-  ) {}
+  constructor(private httpClient: HttpClient) {}
   @Output() newslink = new EventEmitter();
   private newsContent$ = new BehaviorSubject<any>({});
   private topic$ = new BehaviorSubject<any>({});
@@ -20,13 +17,11 @@ export class NewsService {
 
   public get(newslink: string = 'technology') {
     this.topic$.next(newslink);
-    this.setLoading$(true);
-    this.spinner.show();
     const url =
       'https://newsapi.org/v2/top-headlines?' +
       'country=in&' +
       `category=${newslink}&` +
-      'apiKey=f211558e50c148689cb2bda17f750e62';
+      `apiKey=${environment.newsApiKey}`;
 
     return this.httpClient
       .get(url)
@@ -47,7 +42,7 @@ export class NewsService {
   setNews(news: string) {
     this.newsContent$.next(news);
   }
-  getTopic(){
+  getTopic() {
     return this.topic$.asObservable();
   }
 }

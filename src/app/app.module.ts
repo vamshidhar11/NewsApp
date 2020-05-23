@@ -1,32 +1,36 @@
-import { CoreModule } from './core/core.module';
+import { NewsCenterModule } from './news-center/news-center.module';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
+import { AngularFireModule } from '@angular/fire';
 
+import { CoreModule } from './core/core.module';
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
-import { NewsCenterModule } from './news-center/news-center.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
-import { HttpClientModule } from '@angular/common/http';
 import { SidebarModule } from 'ng-sidebar';
 import { IonicModule } from '@ionic/angular';
+
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [AppComponent, PageNotFoundComponent],
   imports: [
     BrowserModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    IonicModule.forRoot(),
     BrowserAnimationsModule,
     HttpClientModule,
-    NewsCenterModule,
     AppRoutingModule,
     SidebarModule.forRoot(),
-    CoreModule,
-    IonicModule.forRoot()
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent],
-  schemas:[CUSTOM_ELEMENTS_SCHEMA ]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule {}

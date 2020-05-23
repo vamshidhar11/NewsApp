@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "news-center-a8a2e": {
+      "hosting": {
+        "NewsApp": [
+          "news-center-a8a2e"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "news-center-a8a2e"
+  }
+}

@@ -1,5 +1,6 @@
 import { Component, HostBinding } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { AuthService } from './core/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,7 @@ import { RouterOutlet } from '@angular/router';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  constructor(public auth: AuthService) {}
   title = 'NewsApp';
   private _opened: boolean = false;
   private _modeNum: number = 0;

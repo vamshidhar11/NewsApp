@@ -17,7 +17,6 @@
   background-color: #001628;
   padding: 2em 1em;
   width: 70%;
-  opacity: 0.9;
   @media only screen and (min-width: 1140px) {
     width: 22%;
   }
@@ -31,4 +30,16 @@
 
 main {
   position: relative;
+}
+
+ion-item {
+  --background: #001628;
+  --background-hover-color: #17bf63;
+  --color: var(--ion-color-light);
+  --color-activated: #17bf63;
+}
+.login-google {
+  --background: #17bf63;
+  --color: #fff;
+  --border-radius: 8px;
 }

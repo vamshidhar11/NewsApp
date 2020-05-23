@@ -27,7 +27,7 @@ export class NewsCenterNavComponent implements OnInit {
       'sports'
     ];
 
-    this.newsDetail('general');
+    // this.newsDetail('general');
     this.newsService.getTopic().subscribe(data => {
       this.selectedId = data;
       console.log(data);

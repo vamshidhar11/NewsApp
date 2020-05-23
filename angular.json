@@ -163,6 +163,10 @@
               "browserTarget": "NewsApp:build:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
     },

@@ -5,13 +5,21 @@ import { CommonModule } from '@angular/common';
 import { SidebarModule } from 'ng-sidebar';
 import { NewsCenterNavComponent } from './news-center-nav/news-center-nav.component';
 
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+
 @NgModule({
   declarations: [
     NewsHeaderComponent,
     NewsFooterComponent,
     NewsCenterNavComponent
   ],
-  imports: [CommonModule, SidebarModule.forRoot()],
+  imports: [
+    CommonModule,
+    SidebarModule.forRoot(),
+    AngularFirestoreModule,
+    AngularFireAuthModule
+  ],
   exports: [NewsHeaderComponent, NewsFooterComponent, NewsCenterNavComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
