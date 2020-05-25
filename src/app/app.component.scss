@@ -14,7 +14,7 @@
 }
 
 ::ng-deep aside {
-  background-color: #001628;
+  background-color: #15202b;
   padding: 2em 1em;
   width: 70%;
   @media only screen and (min-width: 1140px) {
@@ -33,15 +33,16 @@ main {
 }
 
 ion-item {
-  --background: #001628;
+  --background: #15202b;
   --background-hover-color: #17bf63;
   --color: var(--ion-color-light);
-  --color-activated: #17bf63;
 }
+h5 {
+  margin: 0;
+}
+
 .login-google {
-  --background: #a1bdae;
+  --background: #263a4d;
   --color: #fff;
   --border-radius: 8px;
-  --color-activated: #17bf63;
-
 }

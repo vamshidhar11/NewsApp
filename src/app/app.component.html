@@ -29,7 +29,9 @@
       <ion-grid>
         <ion-row>
           <ion-col size="12">
-            <ion-item button detail lines="none"> <h5>Home</h5> </ion-item>
+            <ion-item button detail lines="none">
+              <h5 class="ion-no-margin">Home</h5>
+            </ion-item>
           </ion-col>
           <ion-col size="12">
             <ion-item button detail lines="none"> <h5>Sources</h5> </ion-item>
@@ -43,40 +45,23 @@
               lines="none"
               (click)="auth.googleSignin()"
               button
-              color="success"
-              class="sigin-google"
+              class="login-google"
             >
-              <ion-icon name="logo-google" slot="start"></ion-icon>
+              <ion-icon
+                color="light"
+                name="logo-google"
+                slot="start"
+              ></ion-icon>
               <h5 class="ion-no-margin ion-padding-horizontal">
-                Google Sign-in
+                Connect Google
               </h5>
             </ion-item>
-            <!-- <ion-button
-              class="ion-margin-start"
-              fill="solid"
-              color="success"
-              (click)="auth.googleSignin()"
-            >
-              <ion-icon size="small" slot="start" name="logo-google"></ion-icon>
-              <ion-text
-                color="light"
-                class="ion-padding-horizontal ion-text-center ion-text-capitalize"
-              >
-                <h5 class="ion-no-margin">Google sign-in</h5>
-              </ion-text>
-            </ion-button> -->
           </ion-col>
         </ion-row>
       </ion-grid>
     </ng-template>
 
     <ng-template #authenticated>
-      <!-- <div *ngIf="auth.user$ | async as user">
-        <h3>Howdy, {{ user.displayName }}</h3>
-        <img [src]="user.photoURL" />
-        <p>UID: {{ user.uid }}</p>
-        <button (click)="auth.signOut()">Logout</button>
-      </div> -->
       <ion-row class="ion-margin-top" *ngIf="auth.user$ | async as user">
         <ion-col size="12" class="ion-margin-horizontal">
           <ion-avatar>
@@ -85,7 +70,7 @@
         </ion-col>
         <ion-col size="12">
           <ion-item lines="none">
-            <h3>{{ user.displayName }}</h3>
+            <h5>{{ user.displayName }}</h5>
           </ion-item></ion-col
         >
         <ion-col size="12">
@@ -97,8 +82,10 @@
         <ion-col size="12" class="ion-margin-bottom">
           <ion-item button detail lines="none"> <h5>About</h5> </ion-item>
         </ion-col>
-        <ion-col size="12" lines="none" class="ion-margin-bottom">
-          <ion-item button (click)="auth.signOut()"> <h5>Logout</h5> </ion-item>
+        <ion-col size="12" class="ion-margin-bottom">
+          <ion-item button lines="none" (click)="auth.signOut()">
+            <h5>Logout</h5>
+          </ion-item>
         </ion-col>
       </ion-row>
     </ng-template>
