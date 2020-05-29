@@ -5,7 +5,7 @@
 
   <div class="news-layout">
     <app-news-detail
-      *ngFor="let item of newsContent"
+      *ngFor="let item of newsContent | async"
       [news]="item"
     ></app-news-detail>
   </div>

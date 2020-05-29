@@ -7,6 +7,7 @@ import { NewsCenterNavComponent } from './news-center-nav/news-center-nav.compon
 
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireFunctionsModule } from '@angular/fire/functions';
 
 @NgModule({
   declarations: [
@@ -18,8 +19,10 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
     CommonModule,
     SidebarModule.forRoot(),
     AngularFirestoreModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    AngularFireFunctionsModule
   ],
+  providers: [],
   exports: [NewsHeaderComponent, NewsFooterComponent, NewsCenterNavComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

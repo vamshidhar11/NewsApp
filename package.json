@@ -25,7 +25,6 @@
     "core-js": "^2.5.4",
     "firebase": "^5.7.3",
     "font-awesome": "^4.7.0",
-    "newsapi": "^2.4.0",
     "ng-sidebar": "^9.2.1",
     "rxjs": "~6.5.5",
     "tslib": "^1.9.0",

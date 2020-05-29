@@ -14,16 +14,6 @@ export class NewsCenterComponent implements OnInit {
   constructor(public newsService: NewsService) {}
 
   ngOnInit() {
-    this.newsSubscription = this.newsService.getNews$().subscribe(data => {
-      console.log(data);
-      this.newsContent = data.articles;
-      this.newsService.setLoading$(false);
-    });
-  }
-
-  ngOnDestroy(): void {
-    //Called once, before the instance is destroyed.
-    //Add 'implements OnDestroy' to the class.
-    this.newsSubscription.unsubscribe();
+    this.newsContent = this.newsService.getNews$();
   }
 }
