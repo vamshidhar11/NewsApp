@@ -10,7 +10,6 @@ import { CoreModule } from './core/core.module';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 import { SidebarModule } from 'ng-sidebar';
 import { IonicModule } from '@ionic/angular';
@@ -18,7 +17,7 @@ import { IonicModule } from '@ionic/angular';
 import { environment } from '../environments/environment';
 
 @NgModule({
-  declarations: [AppComponent, PageNotFoundComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),

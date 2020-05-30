@@ -1,4 +1,4 @@
-import { fadeAnimation } from './../../shared/animations/fadeInRoute';
+import { fadeAnimation } from './../../../shared/animations/fadeInRoute';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({

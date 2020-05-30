@@ -27,16 +27,9 @@ export class NewsService {
 
   public get(newslink: string = 'technology') {
     this.topic$.next(newslink);
-    const url1 =
-      'http://localhost:5001/news-center-a8a2e/us-central1/headlines';
 
     const url2 =
       'https://us-central1-news-center-a8a2e.cloudfunctions.net/headlines';
-    const url =
-      'https://newsapi.org/v2/top-headlines?' +
-      'country=in&' +
-      `category=${newslink}&` +
-      `apiKey=${environment.newsApiKey}`;
 
     const params: topHeadlines = new topHeadlines();
     params.country = 'in';
@@ -45,7 +38,7 @@ export class NewsService {
       console.log(data);
     });
     console.log(params);
-    this.callHeadlinesHttp(url2, params);
+    // this.callHeadlinesHttp(url2, params);
     // this.callHeadlines(params);
   }
 
@@ -65,6 +58,17 @@ export class NewsService {
     return this.topic$.asObservable();
   }
 
+  callHeadlinesHttp(url, params) {
+    return this.httpClient
+      .post(url, params)
+      .pipe(
+        map((data: { articles }) => {
+          this.newsContent$.next(data.articles);
+        })
+      )
+      .subscribe();
+  }
+
   callHeadlines(data) {
     const callable = this.functions.httpsCallable('headlines');
 
@@ -80,16 +84,5 @@ export class NewsService {
       .subscribe(res => {
         console.log(res);
       });
-  }
-
-  callHeadlinesHttp(url, params) {
-    return this.httpClient
-      .post(url, params)
-      .pipe(
-        map((data: { articles }) => {
-          this.newsContent$.next(data.articles);
-        })
-      )
-      .subscribe();
   }
 }

@@ -1,4 +1,3 @@
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -9,7 +8,7 @@ const routes: Routes = [
     loadChildren: () =>
       import('./news-center/news-center.module').then(m => m.NewsCenterModule)
   },
-  { path: '**', component: PageNotFoundComponent }
+  { path: '**', redirectTo: 'news-center' }
 ];
 
 @NgModule({

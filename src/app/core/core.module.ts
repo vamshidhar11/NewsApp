@@ -1,9 +1,8 @@
-import { NewsFooterComponent } from './news-footer/news-footer.component';
-import { NewsHeaderComponent } from './news-header/news-header.component';
+import { NewsFooterComponent } from './layout/news-footer/news-footer.component';
+import { NewsHeaderComponent } from './layout/news-header/news-header.component';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SidebarModule } from 'ng-sidebar';
-import { NewsCenterNavComponent } from './news-center-nav/news-center-nav.component';
+import { NewsCenterNavComponent } from './layout/news-center-nav/news-center-nav.component';
 
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
@@ -17,7 +16,6 @@ import { AngularFireFunctionsModule } from '@angular/fire/functions';
   ],
   imports: [
     CommonModule,
-    SidebarModule.forRoot(),
     AngularFirestoreModule,
     AngularFireAuthModule,
     AngularFireFunctionsModule

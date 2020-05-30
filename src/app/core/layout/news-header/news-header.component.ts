@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { NewsService } from '../../news-center/news.service';
+import { NewsService } from '../../../news-center/news.service';
 
 @Component({
   selector: 'app-news-header',
