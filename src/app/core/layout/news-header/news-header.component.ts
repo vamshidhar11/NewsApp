@@ -16,6 +16,6 @@ export class NewsHeaderComponent implements OnInit {
   }
 
   onClick() {
-    this.newsService.get('general');
+    this.newsService.setNewsTopic('general');
   }
 }

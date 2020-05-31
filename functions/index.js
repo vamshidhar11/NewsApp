@@ -35,7 +35,8 @@ exports.app = functions.https.onRequest(app);
 exports.headlines = functions.https.onRequest(async (req, res) => {
   // Grab the text parameter.
   // const original = req.query.text;
-  let { country, category } = req.body;
+  const { country, category } = JSON.parse(req.body);
+  console.log(req.body);
   const url =
     'https://newsapi.org/v2/top-headlines?' +
     `country=${country}&` +

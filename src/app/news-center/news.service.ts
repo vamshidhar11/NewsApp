@@ -1,88 +1,37 @@
-import { environment } from './../../environments/environment';
-import { Injectable, Output, EventEmitter } from '@angular/core';
-// import { EventEmitter } from 'events';
-import { Observable, BehaviorSubject } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
-import { tap, map } from 'rxjs/operators';
-import { AngularFireFunctions } from '@angular/fire/functions';
+import { HeadlinesApi } from './api/headlines.api';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { map, switchMap } from 'rxjs/operators';
+import { Headlines } from './models/headlines.model';
+import { HeadlinesState } from './state/headlines.state';
 
-export class topHeadlines {
-  country: string;
-  category: string;
-  sources: string;
-  q: string;
-}
 @Injectable({
   providedIn: 'root'
 })
 export class NewsService {
+  news$: Observable<any>;
+
   constructor(
-    private httpClient: HttpClient,
-    private functions: AngularFireFunctions
-  ) {}
-  @Output() newslink = new EventEmitter();
-  private newsContent$ = new BehaviorSubject<any>([]);
-  private topic$ = new BehaviorSubject<any>({});
-  private loading$ = new BehaviorSubject<any>(true);
-
-  public get(newslink: string = 'technology') {
-    this.topic$.next(newslink);
-
-    const url2 =
-      'https://us-central1-news-center-a8a2e.cloudfunctions.net/headlines';
-
-    const params: topHeadlines = new topHeadlines();
-    params.country = 'in';
-    this.getTopic().subscribe(data => {
-      params.category = data;
-      console.log(data);
-    });
-    console.log(params);
-    // this.callHeadlinesHttp(url2, params);
-    // this.callHeadlines(params);
+    private headlinesState: HeadlinesState,
+    private headlinesApi: HeadlinesApi
+  ) {
+    this.news$ = this.headlinesState.getTopic$().pipe(
+      switchMap(category => {
+        console.log(category);
+        const country = 'in';
+        return this.headlinesApi.getTopHeadlines({ category, country });
+      })
+    );
+    this.news$
+      .pipe(map(data => data.articles))
+      .subscribe(data => this.headlinesState.setNews(data));
   }
 
-  setLoading$(boolean) {
-    this.loading$.next(boolean);
-  }
-  getLoading$() {
-    return this.loading$.asObservable();
-  }
-  getNews$() {
-    return this.newsContent$.asObservable();
-  }
-  setNews(news: string) {
-    this.newsContent$.next(news);
-  }
-  getTopic() {
-    return this.topic$.asObservable();
+  public setNewsTopic(newslink: string = 'technology') {
+    this.headlinesState.setTopic(newslink);
   }
 
-  callHeadlinesHttp(url, params) {
-    return this.httpClient
-      .post(url, params)
-      .pipe(
-        map((data: { articles }) => {
-          this.newsContent$.next(data.articles);
-        })
-      )
-      .subscribe();
-  }
-
-  callHeadlines(data) {
-    const callable = this.functions.httpsCallable('headlines');
-
-    // Create an Observable and pass any data you want to the function
-    const obs: Observable<any> = callable(data);
-    obs
-      .pipe(
-        map(data => {
-          console.log(data);
-          this.newsContent$.next(data.articles);
-        })
-      )
-      .subscribe(res => {
-        console.log(res);
-      });
+  getHeadlines$(): Observable<Headlines[]> {
+    return this.headlinesState.getHeadlines$();
   }
 }

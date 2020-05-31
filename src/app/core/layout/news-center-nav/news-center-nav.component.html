@@ -2,7 +2,7 @@
   <span class="nav-span-overlay"></span>
   <ul class="nav-grid ">
     <li *ngFor="let link of navBarLinks" [class.selected]="link === selectedId">
-      <a class="nav-link" (click)="newsDetail(link)">{{ link }}</a>
+      <a class="nav-link" (click)="selectTopic(link)">{{ link }}</a>
     </li>
   </ul>
 </nav>

@@ -12,7 +12,5 @@ export class NewsDetailComponent implements OnInit {
   @Input() news: any;
   constructor() {}
 
-  ngOnInit() {
-    console.log(this.news);
-  }
+  ngOnInit() {}
 }

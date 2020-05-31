@@ -45,7 +45,7 @@
               lines="none"
               (click)="auth.googleSignin()"
               button
-              class="login-google"
+              class="item-button"
             >
               <ion-icon
                 color="light"
@@ -83,7 +83,7 @@
           <ion-item button detail lines="none"> <h5>About</h5> </ion-item>
         </ion-col>
         <ion-col size="12" class="ion-margin-bottom">
-          <ion-item button lines="none" (click)="auth.signOut()">
+          <ion-item button lines="none" class="item-button" (click)="auth.signOut()">
             <h5>Logout</h5>
           </ion-item>
         </ion-col>

@@ -1,3 +1,4 @@
+import { HeadlinesState } from './../../../news-center/state/headlines.state';
 import { NewsService } from '../../../news-center/news.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
@@ -10,11 +11,9 @@ import { switchMap } from 'rxjs/operators';
 })
 export class NewsCenterNavComponent implements OnInit {
   selectedId: any;
-  scrollPos: any;
   constructor(
-    private route: ActivatedRoute,
-    private newsService: NewsService,
-    private router: Router
+    private headlinesState: HeadlinesState,
+    private newsService: NewsService
   ) {}
   navBarLinks: Array<string> = new Array();
   ngOnInit() {
@@ -27,14 +26,12 @@ export class NewsCenterNavComponent implements OnInit {
       'sports'
     ];
 
-    this.newsDetail('general');
-    this.newsService.getTopic().subscribe(data => {
+    this.headlinesState.getTopic$().subscribe(data => {
       this.selectedId = data;
       console.log(data);
     });
   }
-
-  newsDetail(link: string) {
-    this.newsService.get(link);
+  selectTopic(topic) {
+    this.newsService.setNewsTopic(topic);
   }
 }
