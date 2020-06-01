@@ -3,7 +3,7 @@
   font-family: 'Montserrat', sans-serif;
   display: grid;
   background-color: #001628;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(12, 1fr);
   grid-gap: 10px;
   padding: 1.6rem;
   width: 100%;
@@ -17,15 +17,22 @@
   scroll-snap-type: x mandatory;
 
   .nav-link {
-    padding: 1.6rem;
     color: #fff;
     cursor: pointer;
     text-align: center;
+    margin: 1rem;
   }
-  li.selected {
-    background-color: #17bf63;
-    color: white;
-    border-radius: 2px;
+  li {
+    padding: 5px 10px;
+    margin-bottom: 1rem;
+    &.selected {
+      background-color: #17bf63;
+      color: white;
+      border-radius: 2px;
+    }
+    @media only screen and (min-width: 800px) {
+      margin-bottom: 0;
+    }
   }
 
   @media only screen and (min-width: 800px) {
