@@ -3,7 +3,7 @@
   font-family: 'Montserrat', sans-serif;
   display: grid;
   background-color: #001628;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   grid-gap: 10px;
   padding: 1.6rem;
   width: 100%;
@@ -12,6 +12,9 @@
   text-align: center;
   text-transform: capitalize;
   list-style: none;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
 
   .nav-link {
     padding: 1.6rem;
