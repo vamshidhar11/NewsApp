@@ -5,7 +5,7 @@
   background-color: #001628;
   grid-template-columns: repeat(12, 1fr);
   grid-gap: 10px;
-  padding: 1.6rem;
+  padding: 1rem;
   width: 100%;
   font-size: 1.9rem;
   border-radius: 0 0 7px 7px;
@@ -24,7 +24,7 @@
   }
   li {
     padding: 5px 10px;
-    margin-bottom: 1rem;
+    margin: 0.5rem 0;
     &.selected {
       background-color: #17bf63;
       color: white;
