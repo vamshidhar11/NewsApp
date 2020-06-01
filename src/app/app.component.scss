@@ -37,6 +37,18 @@ ion-item {
   --background-hover-color: #17bf63;
   --color: var(--ion-color-light);
 }
+.select {
+  margin: 0 1rem 0 0.5rem;
+  height: 4rem;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  scroll-snap-type: y mandatory;
+  div {
+    cursor: pointer;
+    background-color: #001628;
+    padding: 8px;
+  }
+}
 h5 {
   margin: 0;
 }

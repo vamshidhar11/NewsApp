@@ -7,6 +7,7 @@ import { Headlines } from '../models/headlines.model';
 })
 export class HeadlinesState {
   private topic$ = new BehaviorSubject<string>('general');
+  private countryCode$ = new BehaviorSubject<string>('us');
   private newsContent$ = new BehaviorSubject<Headlines[]>(null);
 
   getTopic$() {
@@ -14,6 +15,12 @@ export class HeadlinesState {
   }
   setTopic(topic) {
     this.topic$.next(topic);
+  }
+  getCode$() {
+    return this.countryCode$.asObservable();
+  }
+  setCode(topic) {
+    this.countryCode$.next(topic);
   }
   getHeadlines$() {
     return this.newsContent$.asObservable();

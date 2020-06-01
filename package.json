@@ -23,6 +23,7 @@
     "@ionic/angular": "^5.1.0",
     "bootstrap": "^4.3.1",
     "core-js": "^2.5.4",
+    "country-flag-emoji": "^1.0.3",
     "firebase": "^5.7.3",
     "font-awesome": "^4.7.0",
     "ng-sidebar": "^9.2.1",

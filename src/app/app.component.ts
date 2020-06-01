@@ -1,5 +1,6 @@
+import { HeadlinesState } from './news-center/state/headlines.state';
 import { Component, HostBinding } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import countryFlagEmoji from 'country-flag-emoji';
 import { AuthService } from './core/auth.service';
 
 @Component({
@@ -8,7 +9,14 @@ import { AuthService } from './core/auth.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor(public auth: AuthService) {}
+  countryData: [];
+  constructor(
+    public auth: AuthService,
+    private headlinesState: HeadlinesState
+  ) {
+    console.log(countryFlagEmoji.list);
+    this.countryData = countryFlagEmoji.list;
+  }
   title = 'NewsApp';
   private _opened: boolean = false;
   private _modeNum: number = 0;
@@ -27,6 +35,9 @@ export class AppComponent {
   private _MODES: Array<string> = ['slide', 'over', 'push'];
   private _POSITIONS: Array<string> = ['left', 'right', 'top', 'bottom'];
 
+  selectNation(code) {
+    this.headlinesState.setCode(code);
+  }
   private _toggleOpened(): void {
     this._opened = !this._opened;
   }
