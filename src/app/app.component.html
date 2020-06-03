@@ -45,7 +45,7 @@
                 *ngFor="let item of countryData"
                 (click)="selectNation(item.code)"
               >
-                <h5>{{ item.name }}{{ '   ' }}{{ item.emoji }}</h5>
+                <h5>{{ item.name }}{{ '   ' }}{{ item.emoji }} {{item.code}}</h5>
               </div>
             </div>
           </ion-col>

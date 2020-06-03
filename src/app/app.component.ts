@@ -2,6 +2,8 @@ import { HeadlinesState } from './news-center/state/headlines.state';
 import { Component, HostBinding } from '@angular/core';
 import countryFlagEmoji from 'country-flag-emoji';
 import { AuthService } from './core/auth.service';
+import { from, BehaviorSubject } from 'rxjs';
+import { map, switchMap, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -9,13 +11,78 @@ import { AuthService } from './core/auth.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  countryData: [];
+  countryData = [];
   constructor(
     public auth: AuthService,
     private headlinesState: HeadlinesState
   ) {
-    console.log(countryFlagEmoji.list);
-    this.countryData = countryFlagEmoji.list;
+    const source = from([
+      'us',
+      'in',
+      'au',
+      'gb',
+      'ae',
+      'ar',
+      'at',
+      'be',
+      'bg',
+      'br',
+      'ca',
+      'ch',
+      'cn',
+      'co',
+      'cu',
+      'cz',
+      'de',
+      'eg',
+      'es',
+      'fr',
+      'gr',
+      'hk',
+      'hu',
+      'id',
+      'ie',
+      'il',
+      'it',
+      'jp',
+      'kr',
+      'lt',
+      'lv',
+      'ma',
+      'mx',
+      'my',
+      'ng',
+      'nl',
+      'no',
+      'nz',
+      'ph',
+      'pl',
+      'pt',
+      'ro',
+      'rs',
+      'ru',
+      'sa',
+      'se',
+      'sg',
+      'si',
+      'sk',
+      'sl',
+      'th',
+      'tr',
+      'tw',
+      'ua',
+      've',
+      'za'
+    ]);
+    source
+      .pipe(
+        map(code => {
+          return countryFlagEmoji.get(code);
+        }),
+        tap(data => this.countryData.unshift(data))
+      )
+      .subscribe();
+    console.log(this.countryData);
   }
   title = 'NewsApp';
   private _opened: boolean = false;
