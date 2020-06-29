@@ -12,10 +12,7 @@ import { map, switchMap, tap } from 'rxjs/operators';
 })
 export class AppComponent {
   countryData = [];
-  constructor(
-    public auth: AuthService,
-    private headlinesState: HeadlinesState
-  ) {
+  constructor(public auth: AuthService, public headlinesState: HeadlinesState) {
     const source = from([
       'us',
       'in',
@@ -79,37 +76,37 @@ export class AppComponent {
         map(code => {
           return countryFlagEmoji.get(code);
         }),
-        tap(data => this.countryData.unshift(data))
+        tap(data => this.countryData.push(data))
       )
       .subscribe();
     console.log(this.countryData);
   }
   title = 'NewsApp';
-  private _opened: boolean = false;
-  private _modeNum: number = 0;
-  private _positionNum: number = 0;
-  private _dock: boolean = false;
-  private _closeOnClickOutside: boolean = true;
-  private _closeOnClickBackdrop: boolean = false;
-  private _showBackdrop: boolean = false;
-  private _animate: boolean = true;
-  private _trapFocus: boolean = true;
-  private _autoFocus: boolean = true;
-  private _keyClose: boolean = false;
-  private _autoCollapseHeight: number = 500;
-  private _autoCollapseWidth: number = 500;
+  _opened: boolean = false;
+  _modeNum: number = 0;
+  _positionNum: number = 0;
+  _dock: boolean = false;
+  _closeOnClickOutside: boolean = true;
+  _closeOnClickBackdrop: boolean = false;
+  _showBackdrop: boolean = false;
+  _animate: boolean = true;
+  _trapFocus: boolean = true;
+  _autoFocus: boolean = true;
+  _keyClose: boolean = false;
+  _autoCollapseHeight: number = 500;
+  _autoCollapseWidth: number = 500;
 
-  private _MODES: Array<string> = ['slide', 'over', 'push'];
-  private _POSITIONS: Array<string> = ['left', 'right', 'top', 'bottom'];
+  _MODES: Array<string> = ['slide', 'over', 'push'];
+  _POSITIONS: Array<string> = ['left', 'right', 'top', 'bottom'];
 
   selectNation(code) {
     this.headlinesState.setCode(code);
   }
-  private _toggleOpened(): void {
+  _toggleOpened(): void {
     this._opened = !this._opened;
   }
 
-  private _toggleMode(): void {
+  _toggleMode(): void {
     this._modeNum++;
 
     if (this._modeNum === this._MODES.length) {
@@ -117,15 +114,15 @@ export class AppComponent {
     }
   }
 
-  private _toggleAutoCollapseHeight(): void {
+  _toggleAutoCollapseHeight(): void {
     this._autoCollapseHeight = this._autoCollapseHeight ? null : 500;
   }
 
-  private _toggleAutoCollapseWidth(): void {
+  _toggleAutoCollapseWidth(): void {
     this._autoCollapseWidth = this._autoCollapseWidth ? null : 500;
   }
 
-  private _togglePosition(): void {
+  _togglePosition(): void {
     this._positionNum++;
 
     if (this._positionNum === this._POSITIONS.length) {
@@ -133,59 +130,61 @@ export class AppComponent {
     }
   }
 
-  private _toggleDock(): void {
+  _toggleDock(): void {
     this._dock = !this._dock;
   }
 
-  private _toggleCloseOnClickOutside(): void {
+  _toggleCloseOnClickOutside(): void {
     this._closeOnClickOutside = !this._closeOnClickOutside;
   }
 
-  private _toggleCloseOnClickBackdrop(): void {
+  _toggleCloseOnClickBackdrop(): void {
     this._closeOnClickBackdrop = !this._closeOnClickBackdrop;
   }
 
-  private _toggleShowBackdrop(): void {
+  _toggleShowBackdrop(): void {
     this._showBackdrop = !this._showBackdrop;
   }
 
-  private _toggleAnimate(): void {
+  _toggleAnimate(): void {
     this._animate = !this._animate;
   }
 
-  private _toggleTrapFocus(): void {
+  _toggleTrapFocus(): void {
     this._trapFocus = !this._trapFocus;
   }
 
-  private _toggleAutoFocus(): void {
+  _toggleAutoFocus(): void {
     this._autoFocus = !this._autoFocus;
   }
 
-  private _toggleKeyClose(): void {
+  _toggleKeyClose(): void {
     this._keyClose = !this._keyClose;
   }
 
-  private _onOpenStart(): void {
+  _onOpenStart(): void {
     console.info('Sidebar opening');
   }
 
-  private _onOpened(): void {
+  _onOpened(): void {
     console.info('Sidebar opened');
   }
 
-  private _onCloseStart(): void {
+  _onCloseStart(): void {
     console.info('Sidebar closing');
   }
 
-  private _onClosed(): void {
+  _onClosed(): void {
     console.info('Sidebar closed');
   }
 
-  private _onTransitionEnd(): void {
+  _onTransitionEnd(): void {
     console.info('Transition ended');
   }
 
-  private _onBackdropClicked(): void {
+  _onBackdropClicked(): void {
     console.info('Backdrop clicked');
   }
+
+  
 }
