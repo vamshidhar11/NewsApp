@@ -15,6 +15,7 @@ import { SidebarModule } from 'ng-sidebar';
 import { IonicModule } from '@ionic/angular';
 
 import { environment } from '../environments/environment';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [AppComponent],
@@ -26,7 +27,8 @@ import { environment } from '../environments/environment';
     HttpClientModule,
     AppRoutingModule,
     SidebarModule.forRoot(),
-    CoreModule
+    CoreModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent],
