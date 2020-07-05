@@ -1,8 +1,8 @@
 {
   "name": "NewsApp",
   "short_name": "NewsApp",
-  "theme_color": "#1976d2",
-  "background_color": "#fafafa",
+  "theme_color": "#001628",
+  "background_color": "#001628",
   "display": "standalone",
   "scope": "./",
   "start_url": "https://newscenter.netlify.app/",
