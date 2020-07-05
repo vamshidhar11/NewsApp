@@ -4,7 +4,6 @@
 
 export const environment = {
   production: false,
-  newsApiKey: '659a5ca3b320420398e1ed9101dba8b3',
   firebaseConfig: {
     apiKey: 'AIzaSyDzMoG5oL4B5pu7Fw_WazRYUs4lztQW7ME',
     authDomain: 'news-center-a8a2e.firebaseapp.com',

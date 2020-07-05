@@ -1,18 +1,23 @@
 import { HeadlinesState } from './news-center/state/headlines.state';
-import { Component, HostBinding } from '@angular/core';
+import { Component, HostBinding, OnInit } from '@angular/core';
 import countryFlagEmoji from 'country-flag-emoji';
 import { AuthService } from './core/auth.service';
 import { from, BehaviorSubject } from 'rxjs';
 import { map, switchMap, tap } from 'rxjs/operators';
+import { SwUpdate } from '@angular/service-worker';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   countryData = [];
-  constructor(public auth: AuthService, public headlinesState: HeadlinesState) {
+  constructor(
+    public auth: AuthService,
+    public headlinesState: HeadlinesState,
+    private swUpdate: SwUpdate
+  ) {
     const source = from([
       'us',
       'in',
@@ -80,6 +85,16 @@ export class AppComponent {
       )
       .subscribe();
     console.log(this.countryData);
+  }
+
+  ngOnInit(): void {
+    if (this.swUpdate.isEnabled) {
+      this.swUpdate.available.subscribe(() => {
+        if (confirm('New version available. Load New Version?')) {
+          window.location.reload();
+        }
+      });
+    }
   }
   title = 'NewsApp';
   _opened: boolean = false;
@@ -185,6 +200,4 @@ export class AppComponent {
   _onBackdropClicked(): void {
     console.info('Backdrop clicked');
   }
-
-  
 }
