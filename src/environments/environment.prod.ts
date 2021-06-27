@@ -11,5 +11,4 @@ export const environment = {
     measurementId: 'G-FC34QQ399X'
   },
   api_url: 'https://us-central1-news-center-a8a2e.cloudfunctions.net',
-  api_url_test: 'http://localhost:5001/news-center-a8a2e/us-central1'
 };
